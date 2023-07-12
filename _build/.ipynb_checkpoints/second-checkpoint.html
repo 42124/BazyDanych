@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>2. Instrukcja obsługi aplikacji klienckiej &#8212; Sprawozdanie</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="nav-item nav-item-0"><a href="../index.html">Sprawozdanie</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">2. Instrukcja obsługi aplikacji klienckiej</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="instrukcja-obslugi-aplikacji-klienckiej">
+<h1>2. Instrukcja obsługi aplikacji klienckiej<a class="headerlink" href="#instrukcja-obslugi-aplikacji-klienckiej" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Michał Łabowicz</p>
+</dd>
+<dt class="field-even">Version<span class="colon">:</span></dt>
+<dd class="field-even"><p>1.0 of 21.06.2023</p>
+</dd>
+<dt class="field-odd">Course<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Databases I</p>
+</dd>
+</dl>
+<section id="wybrane-zagadnienie-i-przyjety-model-danych">
+<h2>Wybrane zagadnienie i przyjęty model danych<a class="headerlink" href="#wybrane-zagadnienie-i-przyjety-model-danych" title="Permalink to this heading">¶</a></h2>
+<p>Wybrany przeze mnie scenariusz zakłada zbieranie danych pogodowych ze pogodowych. Zbierane informacje przechowywane są w dwóch tabelach (relacjach) - Stacje oraz Odczyty. Każda stacja ma unikatowy identyfikator (ID), z którym powiązany jest każdy odczyt na zasadzie klucza obcego.
+Poniżej model danych w postaci diagramu ERD.</p>
+<a class="reference internal image-reference" href=".ipynb_checkpoints/erd.png"><img alt="ERD" src=".ipynb_checkpoints/erd.png" style="width: 600px;" /></a>
+</section>
+<section id="obsluga-aplikacji-klienckiej">
+<h2>Obsługa aplikacji klienckiej<a class="headerlink" href="#obsluga-aplikacji-klienckiej" title="Permalink to this heading">¶</a></h2>
+<p>Aplikacja została napisana w postaci pakietu Python. Wykorzystany jest moduł sqlite3 do obsługi bazy danych. W celu uruchomienia aplikacji mobilnej należy, z poziomu katalogu głównego projektu użyć polecenia:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3 bazasql.py</span>
+</pre></div>
+</div>
+<p>Po uruchomieniu aplikacji baza danych utworzy się automatycznie a,użytkownik ma do wybrania kilka opcji, po których użytkownik może nawigować za pomocą znaków wprowadzanych z klawiatury.</p>
+<ol class="arabic simple">
+<li><p>Dodanie stacji</p></li>
+<li><p>Dodanie pomiaru ze stacji (musi istnieć stacja)</p></li>
+<li><p>Usunięcie pomiaru lub stacji</p></li>
+<li><p>Zmiana pomiaru</p></li>
+<li><p>Generowanie losowych danych (stacji lub pomiarów ze stacji)</p></li>
+<li><p>Usunięcie całej bazy danych</p></li>
+<li><p>Zapisanie do pliku CSV</p></li>
+<li><p>Wyjście</p></li>
+</ol>
+<p>Dodawane odczyty samodzielnie generują kraj jak i miasto. Dodawane odczyty mają domyślną aktualną datę pobraną z urządzenia. Podczas usuwania stacji zostaną usunięte także wszystie związane z nią pomiary.
+Usunięcie pomiaru usuwa wszystkie pomiary z danej stacji ze zgodnym czasem co do minuty. Podobnie działa zmiana pomiaru.</p>
+<p>Generowanie losowych stacji jak i dodawanie nowych samodzielnie korzysta z biblioteki “geopy”. Wprowadza ona pewne ograniczenie więc nie należy podawac zbyt dużych wartości(&gt;100).</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">2. Instrukcja obsługi aplikacji klienckiej</a><ul>
+<li><a class="reference internal" href="#wybrane-zagadnienie-i-przyjety-model-danych">Wybrane zagadnienie i przyjęty model danych</a></li>
+<li><a class="reference internal" href="#obsluga-aplikacji-klienckiej">Obsługa aplikacji klienckiej</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/.ipynb_checkpoints/second-checkpoint.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="nav-item nav-item-0"><a href="../index.html">Sprawozdanie</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">2. Instrukcja obsługi aplikacji klienckiej</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Michał Ł.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  </body>
+</html>

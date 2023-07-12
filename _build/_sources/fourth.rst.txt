@@ -1,0 +1,26 @@
+4. Część analityczna
+==================================================================
+
+:Authors:
+    Eryk Mika
+
+:Version: 1.0 of 1.07.2023
+:Course: Databases I
+
+W tej części projektu został napisany skrypt **analiza.py**.Aby mieć dostęp do wykresów należy go uruchomić z poziomu notatnika Jupyter za pomocą linii kodu:
+
+.. code-block:: Python
+
+    import analiza.py
+
+Moduł pozwala na:
+
+#. Wyświetlanie wybranych danych ze stacji z okresu jednego dni i ich graficzną prezentację.
+
+#. Wyświetlanie nawiększej lub najmniejsze wartości danego parametru z możliwym wyborem kraju.
+
+#. Sprawdzenie ile jest stacji lub ile pomairów ma dana stacja.
+
+#. Wypisanie wszystkich stacji z kraju.
+
+#. Wyjście.

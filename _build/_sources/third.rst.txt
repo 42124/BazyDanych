@@ -1,0 +1,32 @@
+3. Instrukcja obsługi skryptów do pracy z bazą danych PostgreSQL
+==================================================================
+
+:Authors:
+    Michał Łabowicz
+
+:Version: 1.0 of 22.06.2023
+:Course: Databases I
+
+
+Skrypty do obłsugi głównej bazy danych
+------------------------------------------------
+
+Został stworzony skrypty do obsługi bazy danych PostgreSQL wykorzystujące pythonowy adapter tej bazy danych - pyscopg. Skrypt automatycznie loguje się do PostgreSQL używając danych z pliku **database_creds.json** w formacie:
+
+.. code-block:: JSON
+
+    {
+     "user_name": "nazwa uzytkownika",
+     "password": "haslo",
+     "host_name": "adres IP/nazwa hosta",
+     "port_number": "port, 5432",
+     "db_name": "nazwa bazy danych"
+    }
+
+Skrypt posiada proste menu gdzie można:
+
+#. Zaimportować dane z plików CSV.
+
+#. Dodać pojedynczy pomiar do bazy danych. Musi istniec stacja pomiarowa.
+
+#. Usunąć bazę danych.
